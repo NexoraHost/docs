@@ -16,10 +16,10 @@
           {
             "group": "Gameserver",
             "pages": [
-              "spiele",
-              "ressourcenlegende",
-              "panel",
-              "ls2225"
+              "gameserver/spiele",
+              "gameserver/ressourcenlegende",
+              "gameserver/panel",
+              "gameserver/ls2225"
             ]
           },
           {
@@ -48,7 +48,7 @@
   },
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/logo_big.271155206.png"
   },
   "navbar": {
     "links": [

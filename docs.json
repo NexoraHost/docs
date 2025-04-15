@@ -4,8 +4,8 @@
   "name": "NexoraHost Docs",
   "colors": {
     "primary": "#651d86",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "light": "#651d86",
+    "dark": "#651d86"
   },
   "favicon": "/favicon.svg",
   "navigation": {

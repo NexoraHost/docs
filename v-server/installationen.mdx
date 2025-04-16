@@ -22,11 +22,10 @@ Hier findest du einige Beispiele der Installationen, die du auf deinem V-Server 
 - **Datenbank (MySQL):** Richten Sie Datenbanken für deine Anwendungen ein.
 - **Programmiersprachen (PHP, Node.js, Python):** Installiere Entwicklungsumgebungen für deine Anwendungen.
 - **Content-Management-Systeme (WordPress, Joomla):** Installiere und verwalte ein CMS für deine Website.
-- 
 
 <AccordionGroup>
-  <Accordion title="Apache" icon="sparkles">
-    Zum Anfang updaten wir einmal den Server und installieren Apache2 (Bei Fedora ist es httpd):
+  <Accordion title="Apache" defaultOpen>
+    Zum Anfang updaten wir einmal den Server und installieren Nginx:
 
     <CodeGroup>
 
@@ -38,7 +37,7 @@ Hier findest du einige Beispiele der Installationen, die du auf deinem V-Server 
     
     ```bash Ubuntu 20.04, 22.0, 24.04
     sudo apt update
-    sudo apt install apache2 -y
+    sudo apt install mysql-server -y
     ```
 
     
@@ -99,7 +98,7 @@ Hier findest du einige Beispiele der Installationen, die du auf deinem V-Server 
     `http://<deine-ip>`\
     → Du solltest die Standard-Apache-Seite sehen.
   </Accordion>
-  <Accordion title="Nginx" icon="sparkles">
+  <Accordion title="Nginx">
     Zum Anfang updaten wir einmal den Server und installieren Apache2 (Bei Fedora ist es httpd):
 
     <CodeGroup>
@@ -172,5 +171,70 @@ Hier findest du einige Beispiele der Installationen, die du auf deinem V-Server 
     Öffne deinen Browser und rufe deine Server-IP auf:\
     `http://<deine-ip>`\
     → Du solltest die Standard-Nginx-Seite sehen.
+  </Accordion>
+  <Accordion title="MySQL Server">
+    Zum Anfang updaten wir einmal den Server und installieren Apache2 (Bei Fedora ist es httpd):
+
+    <CodeGroup>
+
+    ```bash Debian 12 & Debian 11
+    sudo apt update
+    sudo apt install mysql-server -y
+    ```
+
+    
+    ```bash Ubuntu 20.04, 22.0, 24.04
+    sudo apt update
+    sudo apt install apache2 -y
+    ```
+
+    </CodeGroup>
+
+    #### Dienst starten und aktivieren:
+
+    <CodeGroup>
+
+    ```bash Debian 12 & Debian 11
+    sudo systemctl enable mysql
+    sudo systemctl start mysql
+    ```
+
+    
+    ```bash Ubuntu 20.04, 22.0, 24.04
+    sudo systemctl enable mysql
+    sudo systemctl start mysql
+    ```
+
+    </CodeGroup>
+
+    #### Sicherheit konfigurieren:\\
+
+    ➡️ Dabei kannst du:
+
+    - das Root-Passwort setzen
+    - anonyme Benutzer entfernen
+    - Testdatenbank löschen
+    - Remote-Root-Zugriff deaktivieren
+
+    <CodeGroup>
+
+    ```bash Debian 12 & Debian 11
+    sudo mysql_secure_installation
+    ```
+
+    
+    ```bash 20.04, 22.0, 24.04
+    sudo mysql_secure_installation
+    ```
+
+    </CodeGroup>
+
+    #### Test:
+
+    → Du solltest in die MySQL-Konsole gelangen.
+
+    ```bash
+    sudo mysql
+    ```
   </Accordion>
 </AccordionGroup>

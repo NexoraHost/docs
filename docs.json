@@ -16,7 +16,8 @@
           {
             "group": "Docs",
             "pages": [
-              "willkommen"
+              "willkommen",
+              "dienstleistungen"
             ]
           },
           {
@@ -39,6 +40,15 @@
               "v-server/neuinstallation",
               "v-server/upgraden",
               "v-server/installationen"
+            ]
+          },
+          {
+            "group": "Dedicated Server",
+            "pages": [
+              "dedi/allgemein",
+              "dedi/extra-ip",
+              "dedi/laufzeit",
+              "dedi/neuinstallation"
             ]
           },
           {

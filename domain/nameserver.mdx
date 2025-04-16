@@ -1,0 +1,42 @@
+---
+title: "Nameserver"
+---
+
+Der **Nameserver** einer Domain ist dafür verantwortlich, die **Domainanfragen** (z. B. `deinedomain.de`) an den richtigen **Server** zu leiten. Mit der richtigen Konfiguration kannst du steuern, wie und wo deine Domain gehostet wird.
+
+## 📘 Was sind Nameserver?
+**Nameserver (NS)** sind Server, die **DNS-Anfragen** entgegennehmen und dafür sorgen, dass die Domain mit der richtigen IP-Adresse verbunden wird. Sie sind ein wichtiger Bestandteil des Domain-Name-Systems (DNS).
+- **Primärer Nameserver:** Gibt an, welche Server für die Domain zuständig sind.
+- **Sekundärer Nameserver:** Ein zusätzlicher Server für Redundanz und Ausfallsicherheit.
+
+> 📌 Beispiel: Wenn jemand `deinedomain.de` in den Browser eingibt, fragt der Browser den **Nameserver** nach der **IP-Adresse** der Domain.
+> 
+## 🧩 Wie verwalte ich Nameserver?
+### 1. Nameserver für deine Domain ändern
+Um die **Nameserver** deiner Domain zu ändern, folge diesen Schritten:
+- Gehe in dein **Kundenpanel**
+- Wähle unter **"Domains"** die Domain aus, bei der du die Nameserver ändern möchtest
+- Klicke auf **"Nameserver"**
+- Wähle **"Eigenen Nameserver verwenden"** (Benutzerdefinierte Nameserver)
+- Trage die gewünschten **Nameserver** ein
+
+> 📌 Beispiel:  
+  - `ns1.nexorahost.com`
+  - `ns2.nexorahost.com`
+
+### 2. Nameserver auf externe Provider setzen
+Wenn du deine Domain auf einen externen Hosting- oder DNS-Provider wie **Cloudflare** oder **Google DNS** umleiten möchtest, gib dort einfach die entsprechenden Nameserver-Adressen ein.
+
+#### Beispiel für Cloudflare:
+- `ns1.cloudflare.com`
+- `ns2.cloudflare.com`
+
+> 🔄 **Wichtig:** Wenn du auf externe Nameserver umschaltest, sind die DNS-Einträge bei deinem neuen Provider zu verwalten.
+
+## 🛠️ So überprüfst du die Nameserver
+Du kannst die aktiven **Nameserver** einer Domain einfach überprüfen, z. B. über Tools wie **dig** oder **nslookup**.
+
+### Beispiel mit **nslookup**:
+
+```bash
+nslookup -type=NS deinedomain.de

@@ -1,0 +1,70 @@
+---
+title: "DNS Einträge"
+description: "Description of your new file."
+---
+
+Wenn du eine Domain besitzt, brauchst du DNS-Einträge, damit deine Domain weiß, **wohin sie zeigen soll** – z. B. zu deiner Website, deinem E-Mail-Server oder anderen Diensten.
+
+## 📘 Was ist DNS überhaupt?
+**DNS (Domain Name System)** ist so etwas wie das Adressbuch des Internets.
+Wenn du z. B. `deinedomain.de` im Browser eingibst, fragt dein Gerät beim DNS nach, **welcher Server dahintersteckt** – z. B. `123.45.67.89`.
+> 🔁 DNS wandelt Domainnamen in IP-Adressen um.
+
+## 🧩 Typische DNS-Einträge erklärt
+
+| Typ        | Bedeutung                                      | Beispiel                              |
+|------------|-----------------------------------------------|---------------------------------------|
+| **A**      | Verweist eine Domain auf eine IPv4-Adresse     | `deinedomain.de → 123.45.67.89`       |
+| **AAAA**   | Wie A, aber für IPv6                           | `deinedomain.de → 2a03:b0c0::1`       |
+| **CNAME**  | Alias für eine andere Domain                   | `www.deinedomain.de → deinedomain.de` |
+| **MX**     | Zuständig für E-Mail-Zustellung                | `mail.deinedomain.de`                 |
+| **TXT**    | Text-Einträge, z. B. für SPF/DKIM/Verifizierung| `v=spf1 include:...`                  |
+| **SRV**    | Spezielle Dienste wie z. B. VoIP oder XMPP     | Wird selten manuell genutzt           |
+| **NS**     | Nameserver der Domain                          | `ns1.nexorahost.com`                  |
+
+## 🛠️ DNS verwalten bei NexoraHost
+### 1. Domain öffnen
+- Gehe in dein **Kundenpanel**
+- Wähle unter **"Domains"** deine Domain aus
+- Klicke auf **"DNS"**
+
+### 2. DNS-Eintrag hinzufügen
+- Klicke auf **"DNS Eintrag erstellen"**
+- Wähle den **Typ** (z. B. A, CNAME, MX, TXT)
+- Trage den gewünschten **Zielwert** ein
+- Speichere den Eintrag
+
+### Beispiel: Website verbinden (A-Record)
+
+| Typ | Name             | Wert (Ziel)     |
+|-----|------------------|-----------------|
+| A   | `@`              | `123.45.67.89`  |
+| A   | `www`            | `123.45.67.89`  |
+
+### Beispiel: Mailserver einrichten (MX-Record)
+
+| Typ | Name | Wert (Ziel)           | Priorität |
+|-----|------|------------------------|-----------|
+| MX  | `@`  | `mail.deinedomain.de`  | 10        |
+
+> 📌 Wichtig: Trage zusätzlich passende **A- oder AAAA-Records** für `mail.deinedomain.de` ein!
+
+### 3. Änderungen übernehmen
+- DNS-Änderungen können bis zu **24 Stunden** dauern (je nach TTL)
+- In den meisten Fällen sind sie jedoch innerhalb weniger Minuten aktiv
+
+## ❗ Hinweise
+- Falsche DNS-Einträge können dazu führen, dass deine Website oder E-Mails **nicht erreichbar** sind
+- Wenn du dir unsicher bist, **kontaktiere unseren Support**
+
+## 📬 Hilfe benötigt?
+Unser Team hilft dir gern beim Einrichten oder Prüfen deiner DNS-Einträge.
+🔗 [Support kontaktieren](https://nexorahost.com/account/tickets)
+
+## 🧠 Noch Fragen?
+
+| Frage                                         | Antwort                                                  |
+|-----------------------------------------------|-----------------------------------------------------------|
+| Was bedeutet das `@` in einem DNS-Eintrag?    | Steht für die **Hauptdomain** (z. B. `deinedomain.de`)    |
+| Kann ich mehrere A-Records setzen?            | Ja, zur Lastverteilung oder Redundanz                     |
+| Wie prüfe ich, ob ein DNS aktiv ist?          | Nutze Tools wie `dig`, `nslookup` oder Webseiten wie [dnschecker.org](https://dnschecker.org) |

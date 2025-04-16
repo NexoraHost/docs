@@ -52,6 +52,32 @@
               "dedi/laufzeit",
               "dedi/neuinstallation"
             ]
+          },
+          {
+            "group": "Webserver",
+            "pages": [
+              "webserver/ssl-installieren",
+              "webserver/emails",
+              "webserver/php-version",
+              "webserver/speedkit",
+              "webserver/datenbanken",
+              "webserver/geplante-aufgaben"
+            ]
+          },
+          {
+            "group": "Cloud Server",
+            "pages": [
+              "cloud/windows-sync",
+              "cloud/upgraden"
+            ]
+          },
+          {
+            "group": "Domains",
+            "pages": [
+              "domain/dns",
+              "domain/nameserver",
+              "domain/plesk-verbindung"
+            ]
           }
         ]
       }

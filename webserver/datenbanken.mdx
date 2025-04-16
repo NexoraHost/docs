@@ -1,0 +1,72 @@
+---
+title: "Datenbanken"
+description: "Description of your new file."
+---
+
+In Plesk kannst du ganz einfach eigene **MySQL** oder **MariaDB-Datenbanken** anlegen – ideal für Content-Management-Systeme wie **WordPress**, **Joomla**, **Shopware** und viele mehr.
+
+## ✅ Voraussetzungen
+- Du hast eine Domain oder ein Webprojekt in Plesk eingerichtet
+- Dein Hosting-Tarif unterstützt Datenbanken (bei NexoraHost Standard)
+
+## 🛠️ Schritt-für-Schritt: Datenbank erstellen
+### 1. Plesk öffnen & zur Datenbankverwaltung gehen
+
+- Melde dich im **Plesk-Panel** an
+- Gehe zu **Websites & Domains**
+- Klicke auf **Datenbanken**
+
+### 2. Neue Datenbank erstellen
+- Klicke auf **Datenbank hinzufügen**
+- Vergib einen Namen für die Datenbank (z. B. `wordpressdb`)
+- Wähle die zugehörige Domain aus
+- Aktiviere **Benutzerkonto erstellen**
+- Gib Benutzername & Passwort ein
+
+> 💡 Das Passwort sollte sicher sein – verwende am besten den Generator von Plesk.
+
+- Klicke auf **OK**, um die Datenbank zu erstellen
+
+## 🔗 Zugriff auf die Datenbank
+Du kannst direkt aus Plesk oder extern (z. B. mit HeidiSQL oder phpMyAdmin) auf deine Datenbank zugreifen.
+
+### 🔍 Zugriff über Plesk
+- Klicke bei der gewünschten Datenbank auf **phpMyAdmin**
+- Die Oberfläche öffnet sich in einem neuen Tab
+- Hier kannst du Tabellen erstellen, exportieren, importieren usw.
+
+### 🌍 Externer Zugriff (optional)
+Wenn du die Datenbank mit einem Tool wie **HeidiSQL** oder **MySQL Workbench** öffnen willst:
+
+1. Stelle sicher, dass **externer Zugriff erlaubt ist** (nur bei dedizierten Servern / bestimmten Tarifen)
+2. Nutze folgende Zugangsdaten:
+
+| Einstellung   | Wert                                |
+|---------------|--------------------------------------|
+| Hostname      | IP-Adresse oder Domain deines Servers |
+| Port          | 3306 (Standard)                      |
+| Benutzername  | der bei Erstellung gewählte Name     |
+| Passwort      | dein Passwort                        |
+| Datenbank     | Name der Datenbank                   |
+
+> 🔐 **Hinweis:** Aus Sicherheitsgründen ist externer Zugriff bei vielen Webhosting-Tarifen deaktiviert.
+
+## 🧹 Datenbank löschen oder verwalten
+- In der Datenbankübersicht kannst du:
+  - Datenbanken löschen
+  - Benutzer bearbeiten
+  - Backups erstellen
+  - Daten exportieren/importieren
+
+## ❓ Häufige Fragen
+
+| Frage                                  | Antwort                                                                 |
+|----------------------------------------|-------------------------------------------------------------------------|
+| Kann ich mehrere Datenbanken pro Website haben? | Ja, du kannst beliebig viele Datenbanken anlegen (je nach Tarif).      |
+| Was ist der Unterschied zwischen MySQL & MariaDB? | MariaDB ist ein Fork von MySQL und zu 100 % kompatibel.                |
+| Wie setze ich eine Datenbank zurück?           | Am einfachsten: Alte löschen und neu erstellen. Alternativ via phpMyAdmin. |
+
+## 📬 Hilfe benötigt?
+Wenn du dir bei einer Konfiguration unsicher bist, melde dich gerne bei unserem Support-Team:
+
+🔗 [Support kontaktieren](https://nexorahost.com/account/tickets)

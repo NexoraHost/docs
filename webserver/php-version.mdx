@@ -1,0 +1,43 @@
+---
+title: "PHP-Version"
+description: "Description of your new file."
+---
+
+In Plesk kannst du für jede Website individuell festlegen, welche **PHP-Version** verwendet werden soll. Das ist besonders wichtig, wenn deine Website bestimmte Versionen benötigt oder mit älteren Skripten arbeitet.
+
+
+## ✅ Voraussetzungen
+- Du hast Zugriff auf das Plesk Panel
+- Deine Domain ist in Plesk eingerichtet
+- Mehrere PHP-Versionen sind serverseitig installiert (Standard bei NexoraHost)
+
+## 🛠️ Schritt-für-Schritt Anleitung
+### 1. Plesk öffnen & Domain auswählen
+- Melde dich im **Plesk-Panel** an
+- Gehe zu **Websites & Domains**
+- Wähle die gewünschte Domain aus
+
+
+### 2. Hosting-Einstellungen aufrufen
+
+- Klicke auf **Hosting-Einstellungen**
+
+
+### 3. PHP-Version ändern
+- Scrolle zum Abschnitt **Webskript- und Statistik-Einstellungen**
+- Wähle bei **PHP-Version** die gewünschte Version aus dem Dropdown-Menü (z. B. `8.2.13`, `7.4.33`, etc.)
+- Achte darauf, ob du **"FPM-Anwendung von Apache"** oder **"FastCGI"** verwenden willst – für die meisten Seiten reicht FPM
+
+
+
+### 4. Änderungen speichern
+- Klicke ganz unten auf **OK**, um die neue PHP-Version zu aktivieren
+
+
+## 🔍 Überprüfen, ob die neue Version aktiv ist
+Du kannst mit einer kleinen PHP-Datei prüfen, welche Version aktiv ist:
+1. Erstelle eine Datei namens `phpinfo.php` im Hauptverzeichnis deiner Website
+2. Füge folgenden Inhalt ein:
+
+```php
+<?php phpinfo(); ?>

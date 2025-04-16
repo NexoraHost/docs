@@ -1,0 +1,56 @@
+---
+title: "Plesk mit deiner Domain verbinden"
+description: "Description of your new file."
+---
+
+Um deine Domain mit Plesk zu verbinden, musst du sicherstellen, dass die **DNS-Einträge** korrekt konfiguriert sind und dass Plesk für den Umgang mit der Domain eingerichtet ist. Hier zeigen wir dir, wie du das Schritt für Schritt erledigst.
+
+
+## 🧩 Voraussetzungen
+Bevor du mit der Verbindung beginnst, stelle sicher, dass:
+1. Du einen **Webserver** hast.
+2. Deine Domain bereits in deinem **Kundenpanel** registriert oder über einen externen Registrar verbunden ist.
+3. Du Zugriff auf die **DNS-Verwaltung** der Domain hast.
+
+## 📘 Schritte zum Verbinden der Domain mit Plesk
+### 1. Domain in Plesk hinzufügen
+- Melde dich in deinem **Plesk-Panel** an.
+- Gehe zu **"Websites & Domains"**.
+- Klicke auf **"Domain hinzufügen"**. (Wenn noch nicht vorhanden)
+- Gib deine **Domain** ein (z. B. `deinedomain.de`).
+- Wähle den **Webspace** aus, unter dem die Domain laufen soll (oder erstelle einen neuen Webspace).
+- Klicke auf **"OK"**, um die Domain hinzuzufügen.
+
+
+### 2. DNS-Einträge anpassen
+#### 2.1 DNS-Einträge für Plesk konfigurieren
+Stelle sicher, dass die DNS-Einträge korrekt auf deinen Plesk-Server zeigen:
+- **A-Record**: Dieser Eintrag sorgt dafür, dass die Domain auf die IP-Adresse des Servers zeigt.
+    - **Typ:** A
+    - **Name:** `@` (Hauptdomain)
+    - **Wert (Ziel):** IP-Adresse deines Plesk-Servers (z. B. `123.45.67.89`)
+
+- **www-Subdomain konfigurieren**:
+    - **Typ:** CNAME
+    - **Name:** `www`
+    - **Wert:** `deinedomain.de`
+
+#### 2.2 Nameserver konfigurieren
+Falls du die Nameserver auf **Plesk** setzen möchtest, geh zu **"DNS-Einstellungen"** und stelle sicher, dass die **Plesk-Nameserver** korrekt eingetragen sind:
+- **ns1.deinedomain.de**
+- **ns2.deinedomain.de**
+
+### 3. Warten auf DNS-Propagation
+- Nach dem Hinzufügen oder Bearbeiten der DNS-Einträge kann es **bis zu 24 Stunden** dauern, bis die Änderungen weltweit übernommen werden.
+- Überprüfe regelmäßig, ob deine Domain korrekt auf deinen Plesk-Server verweist, indem du sie im Browser eingibst.
+
+## ⚠️ Hinweise
+- Wenn du die Domain auf einen anderen Server umziehst, überprüfe, ob die **DNS-Einträge** aktualisiert wurden, damit die Domain wieder korrekt verbunden wird.
+- Achte darauf, dass die **Nameserver** korrekt auf den Server verweisen, auf dem dein Plesk läuft.
+- Es kann je nach DNS-Provider zu **Verzögerungen** kommen. Stelle sicher, dass du genug Zeit für die DNS-Propagation einplanst.
+
+
+## 📬 Hilfe benötigt?
+Falls du Probleme bei der Verbindung deiner Domain mit Plesk hast, hilft dir unser Support gerne weiter.
+
+🔗 [Support kontaktieren](https://nexorahost.com/account/tickets)

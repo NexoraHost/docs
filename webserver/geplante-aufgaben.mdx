@@ -1,0 +1,57 @@
+---
+title: "Geplante Aufgaben (Cronjobs)"
+description: "Description of your new file."
+---
+
+Mit **geplanten Aufgaben** kannst du in Plesk wiederkehrende Aktionen automatisch ausführen lassen – z. B. PHP-Skripte, Backups oder Wartungen.
+
+## ✅ Was sind geplante Aufgaben?
+Geplante Aufgaben (auch **Cronjobs** genannt) führen automatisch Befehle oder Skripte zu festgelegten Zeiten aus. Beispiele:
+- Tägliches Backup um 02:00 Uhr
+- WordPress Cron ersetzen durch echten Cronjob
+- Automatischer Import von Daten
+
+## 🛠️ Schritt-für-Schritt: Aufgabe erstellen
+### 1. Plesk öffnen & zur Verwaltung gehen
+- Melde dich im **Plesk-Panel** an
+- Gehe zu **Websites & Domains**
+- Klicke bei deiner Domain auf **Geplante Aufgaben**
+
+### 2. Neue Aufgabe hinzufügen
+- Klicke auf **Aufgabe hinzufügen**
+- Wähle den **Aufgabentyp**:
+  - `Befehl ausführen` (z. B. `php script.php`)
+  - `URL abrufen` (z. B. `wget https://domain.de/cron.php`)
+  - `PHP-Skript ausführen`
+
+### Beispiel für ein PHP-Skript:
+- **Typ**: PHP-Skript ausführen
+- **Skriptpfad**: `/httpdocs/cron.php`
+
+> 📌 Wichtig: Der Pfad ist relativ zum Stammverzeichnis der Domain (z. B. `/httpdocs`)
+
+### 3. Zeitplan festlegen
+Du kannst z. B. einstellen:
+
+| Beschreibung           | Eingabe                   |
+|------------------------|---------------------------|
+| Alle 5 Minuten         | `*/5 * * * *`             |
+| Täglich um 2 Uhr nachts| `0 2 * * *`               |
+| Jeden Montag um 10 Uhr | `0 10 * * 1`              |
+
+### 4. E-Mail-Benachrichtigung (optional)
+Wenn du Ergebnisse per Mail erhalten willst:
+- Aktiviere „Benachrichtige mich über Ausführungsergebnisse“
+- Trage deine E-Mail-Adresse ein
+
+> 💡 Tipp: Nur aktivieren, wenn du Rückmeldungen brauchst – sonst gibt’s bei häufigen Cronjobs viel Spam.
+
+### 5. Speichern & fertig!
+- Klicke auf **OK**, um den Cronjob zu speichern
+- Die Aufgabe wird ab jetzt automatisch nach deinem Zeitplan ausgeführt
+
+## 📄 Beispiele
+### PHP-Cronjob alle 5 Minuten
+
+```bash
+/usr/bin/php -q /var/www/vhosts/deinedomain.de/httpdocs/cron.php

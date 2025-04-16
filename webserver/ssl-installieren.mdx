@@ -1,0 +1,61 @@
+---
+title: "SSL-Zertifikat"
+description: "Description of your new file."
+---
+
+Mit Plesk kannst du ganz einfach ein **kostenloses SSL-Zertifikat von Let's Encrypt** aktivieren. Damit wird deine Website automatisch per HTTPS gesichert – ohne zusätzliche Kosten.
+
+## 🔒 Voraussetzungen
+
+- Einen Webserver
+- Die Domain zeigt korrekt auf deinen Server (DNS ist richtig gesetzt)
+- Zugang zum Plesk Panel
+
+## 🛠️ Schritt-für-Schritt Anleitung
+
+### 1. Plesk öffnen & Domain auswählen
+
+- Melde dich im **Plesk Panel** an
+- Navigiere zu **Websites & Domains**
+- Klicke bei der gewünschten Domain auf **SSL/TLS-Zertifikate**
+
+### 2. Let's Encrypt auswählen
+
+- Klicke auf **Let's Encrypt**
+- Trage deine E-Mail-Adresse ein (für Ablaufhinweise vom Zertifikat)
+- Optional: Aktiviere Haken für:
+  - **"www" Subdomain mit einbeziehen**
+  - **E-Mail (z. B. webmail.domain.de) absichern**, falls genutzt
+
+### 3. Zertifikat ausstellen
+
+- Klicke auf **Installieren**
+- Plesk validiert die Domain automatisch und installiert das Zertifikat
+
+⚠️ **Hinweis:** Wenn die Domain nicht erreichbar ist, schlägt die Validierung fehl – stelle sicher, dass deine DNS-Einträge korrekt sind\!
+
+## ✅ Aktivierung überprüfen
+
+Nach erfolgreicher Installation:
+
+- Deine Website ist über `https://deine-domain.de` erreichbar
+- In der Adressleiste erscheint ein **Schlosssymbol**
+- Du kannst die Sicherheit auch über [SSL Labs](https://www.ssllabs.com/ssltest/) prüfen
+
+## 🔁 Automatische Verlängerung
+
+Plesk erneuert das Let's Encrypt Zertifikat **automatisch alle 90 Tage**. Du musst dich nicht selbst darum kümmern.
+
+## ❓ Häufige Probleme
+
+| Problem                            | Lösung                                                                      |
+| ---------------------------------- | --------------------------------------------------------------------------- |
+| DNS zeigt nicht korrekt auf Server | Überprüfe A- oder AAAA-Einträge deiner Domain                               |
+| Webmail-Subdomain nicht erreichbar | Deaktiviere den entsprechenden Haken oder richte Webmail korrekt ein        |
+| Validierung schlägt fehl           | Stelle sicher, dass HTTP-Port (80) offen ist und keine Redirects blockieren |
+
+## 📬 Hilfe benötigt?
+
+Wenn du Unterstützung bei der Einrichtung brauchst oder Fragen hast, kontaktiere gerne unser Support-Team:
+
+🔗 [Support kontaktieren](https://nexorahost.com/account/tickets)

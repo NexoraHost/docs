@@ -35,7 +35,6 @@
               "v-server/installation",
               "v-server/neuinstallation",
               "v-server/upgraden",
-              "v-server/navigation",
               "v-server/installationen"
             ]
           },

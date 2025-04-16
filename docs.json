@@ -17,7 +17,9 @@
             "group": "Docs",
             "pages": [
               "willkommen",
-              "dienstleistungen"
+              "dienstleistungen",
+              "inhaberwechsel",
+              "altersvoraussetzungen"
             ]
           },
           {
@@ -70,6 +72,10 @@
   },
   "navbar": {
     "links": [
+      {
+        "label": "Website",
+        "href": "https://nexorahost.com/"
+      },
       {
         "label": "Support",
         "href": "https://nexorahost.com/account/tickets"

@@ -1,5 +1,176 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Installationen - Anleitungen"
 ---
 
+Installationen auf deinem V-Server
+
+Willkommen auf der Installationsübersicht\! Hier kannst du dir verschiedene Installationen für deinen V-Server ansehen und erfahren, wie du diese auf deinem eigenen Server anwenden kannst.
+
+Unsere Anleitungen decken eine breite Palette von Software- und Server-Konfigurationen ab. Egal, ob du einen Webserver installieren möchtest, eine Datenbank einrichtest oder ein spezifisches Framework benötigst – hier findest du die Anleitungen, die du benötigst.
+
+### Wie du die Anleitungen verwendest
+
+1. **Wähle dein Betriebssystem:** Die Anleitungen sind auf unterschiedliche Betriebssysteme ausgerichtet. Achte darauf, dass du die Anleitung für dein installierte Betriebssystem auswählst.
+2. **Führe die Schritte aus:** Jede Anleitung führt dich durch die Schritte zur Installation der benötigten Software. Folge den Anweisungen in der Reihenfolge, um Fehler zu vermeiden.
+3. **Überprüfe die Installation:** Nach Abschluss der Installation kannst du die Konfigurationen und Installationen überprüfen, um sicherzustellen, dass alles korrekt läuft.
+
+### Verfügbare Installationen:
+
+Hier findest du einige Beispiele der Installationen, die du auf deinem V-Server durchführen kannst:
+
+- **Webserver (Apache, Nginx):** Installiere und konfiguriere einen Webserver, um deine Webseiten bereitzustellen.
+- **Datenbank (MySQL):** Richten Sie Datenbanken für deine Anwendungen ein.
+- **Programmiersprachen (PHP, Node.js, Python):** Installiere Entwicklungsumgebungen für deine Anwendungen.
+- **Content-Management-Systeme (WordPress, Joomla):** Installiere und verwalte ein CMS für deine Website.
+- 
+
+<AccordionGroup>
+  <Accordion title="Apache" icon="sparkles">
+    Zum Anfang updaten wir einmal den Server und installieren Apache2 (Bei Fedora ist es httpd):
+
+    <CodeGroup>
+
+    ```bash Debian 12 & Debian 11
+    sudo apt update
+    sudo apt install apache2 -y
+    ```
+
+    
+    ```bash Ubuntu 20.04, 22.0, 24.04
+    sudo apt update
+    sudo apt install apache2 -y
+    ```
+
+    
+    ```bash Fedora 37 & Fedora 38
+    sudo dnf install httpd -y
+    ```
+
+    </CodeGroup>
+
+    #### Dienst starten und aktivieren:
+
+    <CodeGroup>
+
+    ```bash Debian 12 & Debian 11
+    sudo systemctl enable apache2
+    sudo systemctl start apache2
+    ```
+
+    
+    ```bash Ubuntu 20.04, 22.0, 24.04
+    sudo systemctl enable apache2
+    sudo systemctl start apache2
+    ```
+
+    
+    ```bash Fedora 37 & Fedora 38
+    sudo systemctl enable httpd
+    sudo systemctl start httpd
+    ```
+
+    </CodeGroup>
+
+    #### Firewall (optional, wenn UFW aktiv ist):
+
+    <CodeGroup>
+
+    ```bash Debian 12 & Debian 11
+    sudo ufw allow 'Apache'
+    ```
+
+    
+    ```Ubuntu 20.04, 22.0, 24.04
+    sudo ufw allow 'Apache'
+    ```
+
+    
+    ```bash Fedora 37 & Fedora 38
+    sudo firewall-cmd --permanent --add-service=http
+    sudo firewall-cmd --permanent --add-service=https
+    sudo firewall-cmd --reload
+    ```
+
+    </CodeGroup>
+
+    #### Test:
+
+    Öffne deinen Browser und rufe deine Server-IP auf:\
+    `http://<deine-ip>`\
+    → Du solltest die Standard-Apache-Seite sehen.
+  </Accordion>
+  <Accordion title="Nginx" icon="sparkles">
+    Zum Anfang updaten wir einmal den Server und installieren Apache2 (Bei Fedora ist es httpd):
+
+    <CodeGroup>
+
+    ```bash Debian 12 & Debian 11
+    sudo apt update
+    sudo apt install nginx -y
+    ```
+
+    
+    ```bash Ubuntu 20.04, 22.0, 24.04
+    sudo apt update
+    sudo apt install nginx -y
+    ```
+
+    
+    ```bash Fedora 37 & Fedora 38
+    sudo dnf install nginx -y
+    ```
+
+    </CodeGroup>
+
+    #### Dienst starten und aktivieren:
+
+    <CodeGroup>
+
+    ```bash Debian 12 & Debian 11
+    sudo systemctl enable nginx
+    sudo systemctl start nginx
+    ```
+
+    
+    ```bash Ubuntu 20.04, 22.0, 24.04
+    sudo systemctl enable nginx
+    sudo systemctl start nginx
+    ```
+
+    
+    ```bash Fedora 37 & Fedora 38
+    sudo systemctl enable nginx
+    sudo systemctl start nginx
+    ```
+
+    </CodeGroup>
+
+    #### Firewall (optional, wenn UFW aktiv ist):
+
+    <CodeGroup>
+
+    ```bash Debian 12 & Debian 11
+    sudo ufw allow 'Nginx Full'
+    ```
+
+    
+    ```bash 20.04, 22.0, 24.04
+    sudo ufw allow 'Nginx Full'
+    ```
+
+    
+    ```bash Fedora 37 & Fedora 38
+    sudo firewall-cmd --permanent --add-service=http
+    sudo firewall-cmd --permanent --add-service=https
+    sudo firewall-cmd --reload
+    ```
+
+    </CodeGroup>
+
+    #### Test:
+
+    Öffne deinen Browser und rufe deine Server-IP auf:\
+    `http://<deine-ip>`\
+    → Du solltest die Standard-Nginx-Seite sehen.
+  </Accordion>
+</AccordionGroup>

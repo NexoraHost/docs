@@ -25,7 +25,10 @@
               "gameserver/spiele",
               "gameserver/ressourcenlegende",
               "gameserver/panel",
-              "gameserver/ls2225"
+              "gameserver/ls2225",
+              "gameserver/ls-installation",
+              "gameserver/ls-updaten",
+              "gameserver/ls-panel"
             ]
           },
           {

@@ -38,6 +38,7 @@
             "group": "V-Server",
             "pages": [
               "v-server/hardware-virtualisierung",
+              "v-server/windows-einrichten",
               "v-server/installation",
               "v-server/neuinstallation",
               "v-server/upgraden",

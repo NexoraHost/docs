@@ -1,0 +1,71 @@
+---
+title: "Windows Server Netzwerkeinstellungen"
+---
+
+### Windows Server – Netzwerkeinstellungen manuell setzen
+
+Wenn dein Windows-Server nach der Installation keine Netzwerkverbindung hat, musst du die Netzwerkeinstellungen manuell konfigurieren.
+
+🖥 **Zugriff über die VNC-Konsole:**\
+Öffne dein Produkt im Kundenbereich. Links findest du den Button **„VNC“**. Darüber kannst du dich direkt mit dem Server verbinden, auch wenn keine Netzverbindung besteht.
+
+---
+
+### Schritte zur manuellen Netzwerkkonfiguration
+
+1. **Netzwerk- und Freigabecenter öffnen**
+
+    - Klicke auf das **Netzwerksymbol** in der Taskleiste unten rechts.
+    - Wähle **"Netzwerk- und Interneteinstellungen öffnen"**.
+    - Klicke auf **"Adapteroptionen ändern"**.
+
+2. **Netzwerkadapter auswählen**
+
+    - Klicke mit der **rechten Maustaste** auf deinen aktiven Netzwerkadapter (z. B. „Ethernet“) und wähle **"Eigenschaften"**.
+
+3. **IPv4-Einstellungen aufrufen**
+
+    - Wähle **"Internetprotokoll Version 4 (TCP/IPv4)"** aus der Liste.
+    - Klicke auf **"Eigenschaften"**.
+
+4. **Folgende IP-Adresse verwenden**
+
+    - Wähle die Option **„Folgende IP-Adresse verwenden“**.
+    - Trage folgende Werte ein:
+
+      | Feld                | Beispielwert                  |
+      |---------------------|-------------------------------|
+      | IP-Adresse          | `31.214.243.XXX` *(eigene IP eintragen)* |
+      | Subnetzmaske        | `255.255.255.0`               |
+      | Standardgateway     | `31.214.243.1`                |
+
+5. **DNS-Server eintragen**
+
+    - Wähle **„Folgende DNS-Serveradressen verwenden“**.
+    - Trage z. B. folgende öffentlichen DNS-Server ein:
+
+      | Typ             | Adresse     |
+      |------------------|--------------|
+      | Bevorzugt        | `8.8.8.8`    |
+      | Alternativ       | `1.1.1.1`    |
+
+6. **Einstellungen speichern**
+
+    - Bestätige mit **„OK“** und schließe alle Fenster.
+    - Starte den Server ggf. neu oder führe im CMD aus:
+
+    ```powershell
+    ipconfig /release
+    ipconfig /renew
+    ```
+
+---
+
+### Verbindung testen
+
+Öffne die **Eingabeaufforderung (CMD)** und teste die Internetverbindung mit einem Ping-Befehl:
+
+```powershell
+ping 8.8.8.8
+
+
